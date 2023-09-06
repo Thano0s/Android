@@ -1,5 +1,6 @@
 package com.example.myapplication_2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -41,6 +42,8 @@ class get_user_info_activity : AppCompatActivity() {
                 .add(user)
                 .addOnSuccessListener { documentReference ->
                     Toast.makeText(this.applicationContext, "successfully", Toast.LENGTH_SHORT).show();
+                    val myIntent: Intent = Intent(this,show_user_info_activity::class.java);
+                    startActivity(myIntent);
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this.applicationContext, "Fail", Toast.LENGTH_SHORT).show();
